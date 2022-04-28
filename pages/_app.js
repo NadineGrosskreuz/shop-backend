@@ -1,4 +1,6 @@
 import "../styles/globals.css";
+import "../styles/header.css";
+import "../styles/card.css";
 import Layout from "../src/components/Layout";
 
 function MyApp({ Component, pageProps }) {

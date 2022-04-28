@@ -1,0 +1,11 @@
+header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 64px;
+  padding-left: 24px;
+  padding-right: 24px;
+  color: #fff;
+  background-color: rgb(147, 147, 199);
+  gap: 20px;
+}
