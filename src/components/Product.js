@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "./UI/Button.styled";
 
 export default function Product(props) {
   const [isDeleteMode, setIsDeleteMode] = useState(false);
@@ -41,8 +42,8 @@ function ProductModeShow({
         <li>{tags}</li>
       </ul>
       <div>
-        <button>Edit</button>
-        <button onClick={onEnableDeleteMode}>Delete</button>
+        <Button>Edit</Button>
+        <Button onClick={onEnableDeleteMode}>Delete</Button>
       </div>
     </div>
   );
@@ -71,8 +72,8 @@ function ProductModeDelete({
         <li>{tags}</li>
       </ul>
       <div>
-        <button>Wirklich löschen</button>
-        <button onClick={onDisableDeleteMode}>Abbrechen</button>
+        <Button>Wirklich löschen</Button>
+        <Button onClick={onDisableDeleteMode}>Abbrechen</Button>
       </div>
     </div>
   );

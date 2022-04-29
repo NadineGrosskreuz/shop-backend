@@ -1,11 +1,12 @@
-import "../styles/globals.css";
-import "../styles/header.css";
-import "../styles/card.css";
+//import "../styles/globals.css"
+
+import { GlobalStyle } from "../src/components/GlobalStyle";
 import Layout from "../src/components/Layout";
 
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
+      <GlobalStyle />
       <Component {...pageProps} />
     </Layout>
   );
