@@ -1,8 +1,9 @@
+import { CardContainer } from "./UI/CardContainer.styled";
 import Product from "./Product";
 
 export default function ProductGrid({ products }) {
   return (
-    <ul>
+    <CardContainer>
       {products.map((product) => (
         <li key={product.id}>
           <Product
@@ -13,6 +14,6 @@ export default function ProductGrid({ products }) {
           />
         </li>
       ))}
-    </ul>
+    </CardContainer>
   );
 }
