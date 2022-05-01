@@ -1,3 +1,10 @@
-export default function createCategories() {
-  return <h1>Hello</h1>;
+import CategoryCreateForm from "../src/components/CategoryCreateForm";
+
+export default function createCategory() {
+  return (
+    <>
+      <h2>Create a category</h2>
+      <CategoryCreateForm />
+    </>
+  );
 }
