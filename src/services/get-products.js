@@ -3,11 +3,11 @@ import Product from "../models/Product";
 
 export const getProducts = async () => {
   await dbConnect();
-  const data = await Product.find().populate("category");
+  const products = await Product.find().populate("category");
 
-  return data.map(({ id, name, category }) => ({
+  return products.map(({ id, name /*category*/ }) => ({
     id,
     name,
-    category: category.name,
+    /* category: category.name,*/
   }));
 };

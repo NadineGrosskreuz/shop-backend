@@ -3,7 +3,7 @@ import CategoryCreateForm from "../src/components/CategoryCreateForm";
 export default function createCategory() {
   return (
     <>
-      <h2>Create a category</h2>
+      <h2>Erstelle eine Kategorie</h2>
       <CategoryCreateForm />
     </>
   );
