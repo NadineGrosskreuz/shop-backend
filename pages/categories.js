@@ -1,18 +1,33 @@
 import CategorieGrid from "../src/components/CategorieGrid";
 import { getCategories } from "../src/services/get-categories";
+import { AppContainer } from "../src/components/UI/AppContainer.styled";
+import { CardGrid } from "../src/components/UI/CardGrid.styled";
+import { Headline } from "../src/components/UI/Headline.styled";
+import { SWRConfig } from "swr";
+import { swrFetcher } from "../src/lib/swr-fetcher";
 
 export async function getStaticProps() {
   const categories = await getCategories();
   return {
-    props: { categories },
+    props: {
+      fallback: {
+        "/api/categories": categories,
+      },
+    },
+
+    /*{ categories },*/
   };
 }
 
-export default function Categories({ categories }) {
+export default function Categories({ fallback }) {
   return (
-    <div>
-      <h1>Kategorien</h1>
-      <CategorieGrid categories={categories} />
-    </div>
+    <SWRConfig value={{ fetcher: swrFetcher, fallback }}>
+      <AppContainer>
+        <Headline>Produkte</Headline>
+        <CardGrid>
+          <CategorieGrid /*categories={categories}*/ />
+        </CardGrid>
+      </AppContainer>
+    </SWRConfig>
   );
 }

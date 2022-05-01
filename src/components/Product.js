@@ -1,4 +1,5 @@
 import { useState } from "react";
+//import { useSWRConfig } from "swr";
 import { Button } from "./UI/Button.styled";
 
 export default function Product(props) {
