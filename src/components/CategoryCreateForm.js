@@ -27,7 +27,7 @@ export default function CategoryCreateForm() {
         <input
           name="content"
           label="Content"
-          fullWidth
+          /* fullWidth*/
           value={contentValue}
           onChange={(event) => {
             setContentValue(event.target.value);
@@ -37,7 +37,7 @@ export default function CategoryCreateForm() {
         <input
           name="name"
           label="Name"
-          fullWidth
+          /*fullWidth*/
           value={nameValue}
           onChange={(event) => {
             setNameValue(event.target.value);
