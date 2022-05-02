@@ -73,8 +73,8 @@ export default function ProductCreateForm() {
           placeholder="Tags"
           value={tagsValue}
           onChange={(event) => {
-            const tagArray = event.target.value.split(",");
-            setTagsValue(tagArray);
+            const tagsArray = event.target.value.split(",");
+            setTagsValue(tagsArray);
           }}
         />
         <button type="submit" variant="contained">

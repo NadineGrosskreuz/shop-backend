@@ -18,6 +18,7 @@ export default function ProductGrid() {
           <Product
             name={product.name}
             description={product.description}
+            category={product.category}
             price={product.price}
             tags={product.tags}
             id={product.id}
