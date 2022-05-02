@@ -33,7 +33,7 @@ export default function ProductCreateForm() {
         <input
           name="name"
           label="Name"
-          /*fullWidth*/
+          placeholder="Name"
           value={nameValue}
           onChange={(event) => {
             setNameValue(event.target.value);
@@ -41,36 +41,36 @@ export default function ProductCreateForm() {
           sx={{ marginBottom: 2 }}
         />
         <input
-          name="category"
-          label="Category"
-          /*fullWidth*/
-          value={categoryValue}
-          onChange={(event) => {
-            setCategoryValue(event.target.value);
-          }}
-        />
-        <input
-          name="price"
-          label="Price"
-          /*fullWidth*/
-          value={priceValue}
-          onChange={(event) => {
-            setPriceValue(event.target.value);
-          }}
-        />
-        <input
           name="description"
           label="Description"
-          /*fullWidth*/
+          placeholder="Beschreibung"
           value={descriptionValue}
           onChange={(event) => {
             setDescriptionValue(event.target.value);
           }}
         />
         <input
+          name="price"
+          label="Price"
+          placeholder="Preis"
+          value={priceValue}
+          onChange={(event) => {
+            setPriceValue(event.target.value);
+          }}
+        />
+        <input
+          name="category"
+          label="Category"
+          placeholder="Kategorie"
+          value={categoryValue}
+          onChange={(event) => {
+            setCategoryValue(event.target.value);
+          }}
+        />
+        <input
           name="tags"
           label="Tags"
-          /*fullWidth*/
+          placeholder="Tags"
           value={tagsValue}
           onChange={(event) => {
             const tagArray = event.target.value.split(",");

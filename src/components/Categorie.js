@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "./UI/Button.styled";
 
 export default function Categorie(props) {
   const [isDeleteMode, setIsDeleteMode] = useState(false);
@@ -29,8 +30,8 @@ function CategorieModeShow({ name, description, onEnableDeleteMode }) {
         <h5>{description}</h5>
       </div>
       <div>
-        <button>Edit</button>
-        <button onClick={onEnableDeleteMode}>Delete</button>
+        <Button>Edit</Button>
+        <Button onClick={onEnableDeleteMode}>Delete</Button>
       </div>
     </div>
   );
@@ -45,8 +46,8 @@ function CategorieModeDelete({ name, description, onDisableDeleteMode }) {
       </div>
 
       <div>
-        <button>Wirklich löschen</button>
-        <button onClick={onDisableDeleteMode}>Abbrechen</button>
+        <Button>Wirklich löschen</Button>
+        <Button onClick={onDisableDeleteMode}>Abbrechen</Button>
       </div>
     </div>
   );

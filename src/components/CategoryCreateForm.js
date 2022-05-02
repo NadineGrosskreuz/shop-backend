@@ -2,19 +2,19 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 
 export default function CategoryCreateForm() {
-  const [contentValue, setContentValue] = useState("");
   const [nameValue, setNameValue] = useState("");
+  const [descriptionValue, setDescriptionValue] = useState("");
   const router = useRouter();
 
   const submit = async (event) => {
     event.preventDefault();
-    console.log(contentValue, nameValue);
+    console.log(nameValue, descriptionValue);
 
     const response = await fetch("/api/category/create", {
       method: "POST",
       body: JSON.stringify({
-        content: contentValue,
         name: nameValue,
+        description: descriptionValue,
       }),
     });
     console.log(await response.json());
@@ -25,22 +25,22 @@ export default function CategoryCreateForm() {
     <>
       <form onSubmit={submit}>
         <input
-          name="content"
-          label="Content"
-          /* fullWidth*/
-          value={contentValue}
+          name="name"
+          label="Name"
+          placeholder="Name"
+          value={nameValue}
           onChange={(event) => {
-            setContentValue(event.target.value);
+            setNameValue(event.target.value);
           }}
           sx={{ marginBottom: 2 }}
         />
         <input
-          name="name"
-          label="Name"
-          /*fullWidth*/
-          value={nameValue}
+          name="description"
+          label="Description"
+          placeholder="Beschreibung"
+          value={descriptionValue}
           onChange={(event) => {
-            setNameValue(event.target.value);
+            setDescriptionValue(event.target.value);
           }}
         />
         <button type="submit" variant="contained">

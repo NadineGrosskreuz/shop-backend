@@ -23,7 +23,7 @@ export default function Categories({ fallback }) {
   return (
     <SWRConfig value={{ fetcher: swrFetcher, fallback }}>
       <AppContainer>
-        <Headline>Produkte</Headline>
+        <Headline>Kategorien</Headline>
         <CardGrid>
           <CategorieGrid /*categories={categories}*/ />
         </CardGrid>

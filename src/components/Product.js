@@ -1,5 +1,4 @@
 import { useState } from "react";
-//import { useSWRConfig } from "swr";
 import { Button } from "./UI/Button.styled";
 
 export default function Product(props) {
@@ -73,7 +72,7 @@ function ProductModeDelete({
         <li>{tags}</li>
       </ul>
       <div>
-        <Button>Wirklich löschen</Button>
+        <Button> Wirklich löschen</Button>
         <Button onClick={onDisableDeleteMode}>Abbrechen</Button>
       </div>
     </div>
