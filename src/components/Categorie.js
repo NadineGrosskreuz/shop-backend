@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button } from "./UI/Button.styled";
 import { mutate } from "swr";
 
+// 4. Daten Kategorien: Seite erstellen
+
 export default function Categorie(props) {
   const [isDeleteMode, setIsDeleteMode] = useState(false);
   function enableDeleteMode() {

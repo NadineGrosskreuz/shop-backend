@@ -6,6 +6,8 @@ import { Headline } from "../src/components/UI/Headline.styled";
 import { SWRConfig } from "swr";
 import { swrFetcher } from "../src/lib/swr-fetcher";
 
+// 5. Daten Kategorien: statt der Daten von der API, wollen wir Fallback-Daten haben
+
 export async function getStaticProps() {
   const categories = await getCategories();
   return {

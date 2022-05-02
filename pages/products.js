@@ -6,7 +6,10 @@ import { Headline } from "../src/components/UI/Headline.styled";
 import { SWRConfig } from "swr";
 import { swrFetcher } from "../src/lib/swr-fetcher";
 
+//4. Daten Produkte:
+
 export async function getStaticProps() {
+  //wir warten, dass es mit getProducts verbunden wird
   const products = await getProducts();
   return {
     props: {
@@ -17,6 +20,8 @@ export async function getStaticProps() {
     /*{ products },*/
   };
 }
+
+//alles, was als prop returnt wird, wird als prop in die Funktion unten übergeben
 
 export default function Products({ fallback }) {
   return (

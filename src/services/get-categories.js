@@ -2,9 +2,7 @@
 import { dbConnect } from "../lib/shop-backend";
 import Category from "../models/Category";
 
-/*export default function getCategories() {
-  return data;
-}*/
+//3. Daten Kategorien: Model importieren, über Liste mappen und neues Array erstellen; wir mappen, weil wir nur Felder zurück geben wollen, die wir haben möchten
 
 export const getCategories = async () => {
   await dbConnect();

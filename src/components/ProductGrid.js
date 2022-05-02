@@ -2,6 +2,8 @@ import { CardContainer } from "./UI/CardContainer.styled";
 import Product from "./Product";
 import useSWR from "swr";
 
+// 5. Daten Produkte:
+
 export default function ProductGrid() {
   /* {
     products
