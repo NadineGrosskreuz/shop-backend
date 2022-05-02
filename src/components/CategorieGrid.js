@@ -13,11 +13,12 @@ export default function CategorieGrid() {
   }
   return (
     <CardContainer>
-      {data.map((categorie) => (
-        <li key={categorie.id}>
+      {data.map((category) => (
+        <li key={category.id}>
           <Categorie
-            name={categorie.name}
-            description={categorie.description}
+            name={category.name}
+            description={category.description}
+            id={category.id}
           />
         </li>
       ))}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "./UI/Button.styled";
+import { mutate } from "swr";
 
 export default function Categorie(props) {
   const [isDeleteMode, setIsDeleteMode] = useState(false);
@@ -22,7 +23,7 @@ export default function Categorie(props) {
     </>
   );
 }
-function CategorieModeShow({ name, description, onEnableDeleteMode }) {
+function CategorieModeShow({ id, name, description, onEnableDeleteMode }) {
   return (
     <div>
       <div>
@@ -37,7 +38,7 @@ function CategorieModeShow({ name, description, onEnableDeleteMode }) {
   );
 }
 
-function CategorieModeDelete({ name, description, onDisableDeleteMode }) {
+function CategorieModeDelete({ id, name, description, onDisableDeleteMode }) {
   return (
     <div>
       <div>
@@ -46,7 +47,17 @@ function CategorieModeDelete({ name, description, onDisableDeleteMode }) {
       </div>
 
       <div>
-        <Button>Wirklich löschen</Button>
+        <Button
+          onClick={async () => {
+            const response = await fetch("/api/category/" + id, {
+              method: "DELETE",
+            });
+            console.log(await response.json());
+            mutate("/api/categories");
+          }}
+        >
+          Wirklich löschen
+        </Button>
         <Button onClick={onDisableDeleteMode}>Abbrechen</Button>
       </div>
     </div>

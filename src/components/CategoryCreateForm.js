@@ -18,7 +18,7 @@ export default function CategoryCreateForm() {
       }),
     });
     console.log(await response.json());
-    router.push("/category");
+    router.push("/categories");
   };
 
   return (

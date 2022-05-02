@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "./UI/Button.styled";
+import { mutate } from "swr";
 
 export default function Product(props) {
   const [isDeleteMode, setIsDeleteMode] = useState(false);
@@ -72,7 +73,17 @@ function ProductModeDelete({
         <li>{tags}</li>
       </ul>
       <div>
-        <Button> Wirklich löschen</Button>
+        <Button
+          onClick={async () => {
+            const response = await fetch("/api/product/" + id, {
+              method: "DELETE",
+            });
+            console.log(await response.json());
+            mutate("/api/products");
+          }}
+        >
+          Wirklich löschen
+        </Button>
         <Button onClick={onDisableDeleteMode}>Abbrechen</Button>
       </div>
     </div>

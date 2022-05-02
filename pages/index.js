@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <>
-      <p>Hello</p>
+      <p>Willkommen im Shop für Liebhaber von Meerestieren!</p>
     </>
   );
 }
