@@ -14,7 +14,8 @@ export default async function handler(request, response) {
     }*/
 
     const newCategory = await Category.create({
-      content: data.content,
+      name: data.name,
+      description: data.description,
       /*user: user.id,*/
     });
 

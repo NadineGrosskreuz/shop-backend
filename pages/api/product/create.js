@@ -14,7 +14,11 @@ export default async function handler(request, response) {
     }*/
 
     const newProduct = await Product.create({
-      content: data.content,
+      name: data.name,
+      description: data.description,
+      tags: data.tags,
+      price: data.price,
+      category: data.category,
       /*user: user.id,*/
     });
 
